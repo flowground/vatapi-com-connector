@@ -1,0 +1,116 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "properties": {
+                "business_address": {
+                    "description": "Your business address",
+                    "type": "string"
+                },
+                "business_name": {
+                    "description": "Your business name",
+                    "type": "string"
+                },
+                "conversion_rate": {
+                    "description": "The rate of conversion at time of supply",
+                    "type": "integer"
+                },
+                "currency_code": {
+                    "description": "3 character currency code for invoice",
+                    "type": "string"
+                },
+                "currency_code_conversion": {
+                    "description": "3 character currency code to be converted from original transaction currency",
+                    "type": "string"
+                },
+                "customer_address": {
+                    "description": "Your customers address",
+                    "type": "string"
+                },
+                "customer_name": {
+                    "description": "Your customers name or trading name",
+                    "type": "string"
+                },
+                "customer_vat_number": {
+                    "description": "Optional customers VAT number",
+                    "type": "string"
+                },
+                "date": {
+                    "description": "The date the invoice was issued",
+                    "type": "string"
+                },
+                "discount_rate": {
+                    "description": "The discount rate per item",
+                    "type": "string"
+                },
+                "items": {
+                    "description": "An array of your invoice items",
+                    "items": {
+                        "properties": {
+                            "description": {
+                                "description": "The item line description",
+                                "type": "string"
+                            },
+                            "price_each": {
+                                "description": "The price of the individual item (Ex VAT)",
+                                "type": "integer"
+                            },
+                            "quantity": {
+                                "description": "The quantity of the item",
+                                "type": "integer"
+                            },
+                            "vat_rate": {
+                                "description": "The VAT rate at which the item is charged",
+                                "type": "integer"
+                            }
+                        },
+                        "required": [
+                            "description",
+                            "price_each",
+                            "quantity",
+                            "vat_rate"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "notes": {
+                    "description": "Add a note to the invoice.",
+                    "type": "string"
+                },
+                "price_type": {
+                    "description": "Optional, if the price is including VAT set the type to 'incl'. Otherwise the default is assumed as excluding VAT already, 'excl'",
+                    "type": "string"
+                },
+                "tax_point": {
+                    "description": "(or 'time of supply') if this is different from the invoice date",
+                    "type": "string"
+                },
+                "type": {
+                    "description": "The type of invoice. Either 'sale' or 'refund'",
+                    "type": "string"
+                },
+                "vat_number": {
+                    "description": "Your VAT number",
+                    "type": "string"
+                },
+                "zero_rated": {
+                    "description": "To Zero-Rate the VAT, set to true.",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "business_address",
+                "business_name",
+                "currency_code",
+                "items",
+                "type",
+                "vat_number"
+            ],
+            "type": "object"
+        },
+        "Response_Type": {
+            "type": "string"
+        }
+    }
+}

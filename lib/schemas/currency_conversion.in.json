@@ -1,0 +1,20 @@
+{
+    "type": "object",
+    "properties": {
+        "currency_from": {
+            "required": true,
+            "type": "string"
+        },
+        "currency_to": {
+            "required": true,
+            "type": "string"
+        },
+        "amount": {
+            "required": false,
+            "type": "integer"
+        },
+        "Response_Type": {
+            "type": "string"
+        }
+    }
+}

@@ -1,0 +1,12 @@
+{
+    "type": "object",
+    "properties": {
+        "code": {
+            "required": true,
+            "type": "string"
+        },
+        "Response_Type": {
+            "type": "string"
+        }
+    }
+}

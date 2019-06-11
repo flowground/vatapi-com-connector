@@ -1,0 +1,24 @@
+{
+    "type": "object",
+    "properties": {
+        "code": {
+            "required": true,
+            "type": "string"
+        },
+        "country_rate": {
+            "required": false,
+            "type": "string"
+        },
+        "price": {
+            "required": true,
+            "type": "integer"
+        },
+        "type": {
+            "required": false,
+            "type": "string"
+        },
+        "Response_Type": {
+            "type": "string"
+        }
+    }
+}

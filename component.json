@@ -1,0 +1,216 @@
+{
+    "title": "VAT API",
+    "description": "A developer friendly API to help your business achieve VAT compliance",
+    "docsUrl": "",
+    "url": "https://api.apis.guru/v2/specs/vatapi.com/1/swagger.json",
+    "envVars": {},
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://vatapi.com/v1",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            },
+            "auth_apikey": {
+                "label": "apikey (apikey)",
+                "viewClass": "TextFieldView",
+                "note": "Enter your API key"
+            }
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "country_code_check": {
+            "main": "./lib/actions/country_code_check.js",
+            "title": "Retrieve a countries VAT rates by its 2 digit country code",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/country_code_check.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "currency_conversion": {
+            "main": "./lib/actions/currency_conversion.js",
+            "title": "Convert a currency",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/currency_conversion.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "create_invoice": {
+            "main": "./lib/actions/create_invoice.js",
+            "title": "Create a VAT invoice",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/create_invoice.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "invoice_delete": {
+            "main": "./lib/actions/invoice_delete.js",
+            "title": "Delete an invoice",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/invoice_delete.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_invoice": {
+            "main": "./lib/actions/get_invoice.js",
+            "title": "Retrieve an invoice",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_invoice.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "invoice_update": {
+            "main": "./lib/actions/invoice_update.js",
+            "title": "Update an existing invoice",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/invoice_update.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ip_check": {
+            "main": "./lib/actions/ip_check.js",
+            "title": "Retrieve a countries VAT rates from an IP address",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ip_check.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "api_usage": {
+            "main": "./lib/actions/api_usage.js",
+            "title": "Check api requests remaining on current subscription plan",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/api_usage.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "vat_number_validate": {
+            "main": "./lib/actions/vat_number_validate.js",
+            "title": "Validate a VAT number",
+            "description": "<p>We highly recommend if you are able, to check a VAT number on your end first to save wasted API lookups. It maybe that your customer has simply entered the wrong format. <a href='http://www.braemoor.co.uk/software/vat.shtml' target='_blank'>Heres a client side way to check the format using Javascript</a></p>",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/vat_number_validate.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "convert_price": {
+            "main": "./lib/actions/convert_price.js",
+            "title": "Convert a price to or from VAT price.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/convert_price.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "vat_rates": {
+            "main": "./lib/actions/vat_rates.js",
+            "title": "Retrieve all current EU VAT rates",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/vat_rates.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}
