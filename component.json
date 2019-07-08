@@ -166,7 +166,7 @@
         "vat_number_validate": {
             "main": "./lib/actions/vat_number_validate.js",
             "title": "Validate a VAT number",
-            "description": "<p>We highly recommend if you are able, to check a VAT number on your end first to save wasted API lookups. It maybe that your customer has simply entered the wrong format. <a href='http://www.braemoor.co.uk/software/vat.shtml' target='_blank'>Heres a client side way to check the format using Javascript</a></p>",
+            "description": "We highly recommend if you are able, to check a VAT number on your end first to\nsave wasted API lookups. It maybe that your customer has simply entered the\nwrong format. Heres a client side way to check the format using Javascript\n[http://www.braemoor.co.uk/software/vat.shtml]",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
